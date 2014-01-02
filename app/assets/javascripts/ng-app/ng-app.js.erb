@@ -1,0 +1,3 @@
+angular.module("NoodleIncident.services",['rails'])
+angular.module("NoodleIncident.controllers",["NoodleIncident.services"])
+angular.module("NoodleIncident",["ui.bootstrap","ui.router","NoodleIncident.controllers", "<%= Rails.application.config.angular_templates.module_name %>"])
