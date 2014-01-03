@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <form name="newEventForm">
+    <label for="name">Event Name</label><input type="text" ng-model="newEventForm.name"/><br>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="newEventForm-control" datepicker-popup="{{format}}" ng-model="newEventForm.date" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+        </p>
+      </div>
+    </div>
+
+    <div ng-model="newEventForm.eventTime" ng-change="" style="display:inline-block;">
+      <timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    </div>
+
+
+    <label for="venue">Venue</label><input type="text" ng-model="newEventForm.venue"/><br>
+    <label for="maxPlayers">Maximum number of players</label><input type="text" ng-model="newEventForm.maxPlayers"/><br>
+    <label for="description">Description</label><br>
+    <textarea ng-model="newEventForm.description"/><br>
+
+    <button ng-click="save_new_event()">Create This Event</button>
+  </form>
+</div>

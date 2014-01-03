@@ -13,3 +13,5 @@
  *= require bootstrap/bootstrap
  *= require bootstrap/bootstrap-theme
  */
+
+.nav, .pagination, .carousel a { cursor: pointer; }

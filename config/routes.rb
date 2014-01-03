@@ -1,5 +1,16 @@
 NoodleIncident::Application.routes.draw do
-  get "/cool-things", to: "application#cool_things"
+  namespace :api do
+    namespace :v1 do
+      resources :events
+    end
+  end
+
+  #Auth
+  match '/auth/:provider/callback', to: 'session#create', as: :signin, via: [:get, :post]
+  match "/auth/signout" => "session#destroy", as: :signout, via: [:get, :post]
+  get "/auth" => "session#index"
+  resource :auth, only: [:create, :destroy]
+
   root to: "application#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

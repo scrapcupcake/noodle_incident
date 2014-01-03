@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <div class="row form-group"><label for="q">Find by Game</label> <input name="q" type="text" ng-model="query"></div>
+
+  <h3>Events Near You</h3>
+
+  <div class="event" ng-repeat="event in events">
+    <h2 class="row">{{event.name}}</h2>
+
+    <div class="row">
+      <span class="col-md-4">Date</span>
+      <span class="col-md-4">Time</span>
+      <span class="col-md-4">Venue</span>
+    </div>
+    <div class="row">
+      <span class="col-md-4">{{event.date}}</span>
+      <span class="col-md-4">{{event.time}}</span>
+      <span class="col-md-4">{{event.location}}</span>
+    </div>
+    <div class="row">
+      <span class="col-md-4">Game: {{event.game}} <a class="btn btn-primary" ng-href="{{event.url}}">Map It</a></span>
+      <span class="col-md-8">Seats Available: {{event.seatsRemaining}}/{{event.totalSeats}}</span>
+    </div>
+  </div>
+
+</div>

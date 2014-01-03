@@ -1,2 +1,7 @@
+<div id="alerts" ng-controller="alertCtrl">
+  <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+
+<a class="btn btn-primary" href="/#/entry">Add an event</a>
 <div ui-view>
 </div>
